@@ -1,0 +1,113 @@
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.containerPrincipal {
+  width: 1025px;
+  height: 839px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.forca {
+  position: absolute;
+  top: 59px;
+  left: 39px;
+  width: 400px;
+  height: 466px;
+}
+.escolherPalavra {
+  position: absolute;
+  top: 89px;
+  right: 53px;
+  width: 200px;
+  height: 60px;
+  background-color: #27ae60;
+  border-radius: 8px;
+  border-style: none;
+}
+.escolherPalavra p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ffffff;
+  font-style: normal;
+}
+
+.placeHolderLetras {
+  height: 68px;
+  position: absolute;
+  top: 431px;
+  right: 61px;
+}
+.placeHolderLetras p {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 68px;
+  color: #000000;
+}
+
+.teclado {
+  width: 664px;
+  height: 91px;
+  position: absolute;
+  top: 596px;
+  left: 211px;
+}
+.botaoLetra {
+  width: 40px;
+  height: 40px;
+  background-color: #9faab5;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+  margin-left: 12px;
+  margin-bottom: 11px;
+}
+.botaoLetra p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #798a9f;
+}
+
+.resposta {
+  width: 624px;
+  height: 40px;
+  position: absolute;
+  top: 743px;
+  left: 231px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resposta p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+}
+.resposta input {
+  width: 353px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  margin-left: 6px;
+  margin-right: 15px;
+}
+.resposta button {
+  width: 100px;
+  height: 40px;
+  background-color: #e1ecf4;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+}
+.resposta button p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3c76a1;
+}
