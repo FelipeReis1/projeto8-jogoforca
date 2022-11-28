@@ -27,6 +27,9 @@ body {
   border-radius: 8px;
   border-style: none;
 }
+.escolherPalavra:hover {
+  cursor: pointer;
+}
 .escolherPalavra p {
   font-weight: 700;
   font-size: 20px;
@@ -51,9 +54,11 @@ body {
 }
 
 .teclado {
-  width: 664px;
+  width: 700px;
   height: 91px;
   position: absolute;
+  display: flex;
+  flex-wrap: wrap;
   top: 596px;
   left: 211px;
 }
@@ -66,11 +71,32 @@ body {
   margin-left: 12px;
   margin-bottom: 11px;
 }
+.botaoLetra :hover {
+  cursor: pointer;
+}
 .botaoLetra p {
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
   color: #798a9f;
+}
+.botaoLetraHabilitado {
+  width: 40px;
+  height: 40px;
+  background-color: #e1ecf4;
+  border: 1px solid #7aa7c7;
+  border-radius: 3px;
+  margin-left: 12px;
+  margin-bottom: 11px;
+}
+.botaoLetraHabilitado :hover {
+  cursor: pointer;
+}
+.botaoLetraHabilitado p {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #39739d;
 }
 
 .resposta {
@@ -83,6 +109,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .resposta p {
   font-weight: 400;
   font-size: 20px;
@@ -110,4 +137,7 @@ body {
   font-size: 16px;
   line-height: 19px;
   color: #3c76a1;
+}
+.resposta button:hover {
+  cursor: pointer;
 }
