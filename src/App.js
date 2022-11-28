@@ -46,6 +46,7 @@ export default function App() {
   const [habilitado, setHabilitado] = React.useState(false);
   const [palavraAtual, setPalavraAtual] = React.useState("");
   const [letrasSelecionadas, setLetrasSelecionadas] = React.useState([]);
+  const [chute, setChute] = React.useState("");
 
   function escolherPalavra() {
     const palavra = Math.floor(Math.random() * palavras.length);
@@ -81,7 +82,15 @@ export default function App() {
         ))}
       </div>
 
-      <Chute />
+      <Chute
+        chute={chute}
+        setChute={setChute}
+        palavra={palavraAtual}
+        imagensForca={imagensForca}
+        setImagemAtual={setImagemAtual}
+        contErros={contErros}
+        setContErros={setContErros}
+      />
     </div>
   );
 }
