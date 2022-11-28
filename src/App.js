@@ -89,7 +89,7 @@ export default function App() {
             letra={a}
             palavra={palavraAtual}
             letraSelecionada={letrasSelecionadas}
-            setLetrasSelecionada={setLetrasSelecionadas}
+            setLetraSelecionada={setLetrasSelecionadas}
             contErros={contErros}
             setContErros={setContErros}
             setImagemAtual={setImagemAtual}

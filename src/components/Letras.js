@@ -10,7 +10,7 @@ export default function Letras(props) {
       props.fimDeJogo !== "ganhou"
     ) {
       const novoArray = [...arrayLetra, letra];
-      props.setLetrasSelecionada(novoArray);
+      props.setLetraSelecionada(novoArray);
       const palavraArray = props.palavra.split("");
       if (palavraArray.includes(letra) === false) {
         if (props.contErros + 1 === 6) {

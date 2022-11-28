@@ -1,6 +1,6 @@
 export default function Chute(props) {
   function chutar() {
-    if (props.palavra !== "") {
+    if (props.palavra !== "" && props.fimDeJogo === "") {
       if (props.palavra === props.chute) {
         props.setFimDeJogo("ganhou");
       } else {
