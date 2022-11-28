@@ -6,9 +6,18 @@ export default function Jogo(props) {
 
   return (
     <>
-      <img className="forca" src={props.imagem} alt=""></img>
+      <img
+        data-test="game-image"
+        className="forca"
+        src={props.imagem}
+        alt=""
+      ></img>
       {palavra === "" || props.fimDeJogo !== "" ? (
-        <button onClick={props.funcao} className="escolherPalavra">
+        <button
+          data-test="choose-word"
+          onClick={props.funcao}
+          className="escolherPalavra"
+        >
           <p>Escolher Palavra</p>
         </button>
       ) : (
@@ -22,7 +31,7 @@ export default function Jogo(props) {
 
       {props.fimDeJogo === "ganhou" ? (
         <div className="placeHolderLetras">
-          <p className="green">
+          <p data-test="word" data-answer={props.palavra} className="green">
             {novaPalavra.map((p, index) => (
               <LetraPalavra
                 key={index}
@@ -39,7 +48,7 @@ export default function Jogo(props) {
         </div>
       ) : props.fimDeJogo === "perdeu" ? (
         <div className="placeHolderLetras">
-          <p className="red">
+          <p data-test="word" data-answer={props.palavra} className="red">
             {novaPalavra.map((p, index) => (
               <LetraPalavra
                 key={index}
@@ -56,7 +65,7 @@ export default function Jogo(props) {
         </div>
       ) : (
         <div className="placeHolderLetras">
-          <p>
+          <p data-test="word" data-answer={props.palavra}>
             {novaPalavra.map((p, index) => (
               <LetraPalavra
                 key={index}

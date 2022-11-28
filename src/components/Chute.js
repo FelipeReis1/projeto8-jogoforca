@@ -17,10 +17,11 @@ export default function Chute(props) {
     <div className="resposta">
       <p>Já sei a palavra!</p>
       <input
+        data-test="guess-input"
         onChange={(e) => props.setChute(e.target.value)}
         value={props.chute}
       ></input>
-      <button onClick={chutar} className="chutar">
+      <button data-test="guess-button" onClick={chutar} className="chutar">
         <p>Chutar</p>
       </button>
     </div>

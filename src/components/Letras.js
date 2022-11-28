@@ -36,6 +36,7 @@ export default function Letras(props) {
   }
   return (
     <button
+      data-test="letter"
       onClick={cliqueLetra}
       className={
         props.letraSelecionada.includes(props.letra) === false &&
