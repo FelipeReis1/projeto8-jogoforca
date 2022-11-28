@@ -47,17 +47,28 @@ export default function App() {
   const [palavraAtual, setPalavraAtual] = React.useState("");
   const [letrasSelecionadas, setLetrasSelecionadas] = React.useState([]);
   const [chute, setChute] = React.useState("");
+  const [fimDeJogo, setFimDeJogo] = React.useState("");
+  const [acertos, setAcertos] = React.useState(0);
 
   function escolherPalavra() {
-    const palavra = Math.floor(Math.random() * palavras.length);
-    const palavraSorteada = palavras[palavra];
-    setPalavraAtual(palavraSorteada);
+    if (palavraAtual === "" || fimDeJogo !== "") {
+      setImagemAtual(imagensForca[0]);
+      setContErros(0);
+      setHabilitado(false);
+      setPalavraAtual("");
+      setLetrasSelecionadas([]);
+      setChute("");
+      setFimDeJogo("");
+      setAcertos(0);
+      const palavra = Math.floor(Math.random() * palavras.length);
+      const palavraSorteada = palavras[palavra];
+      setPalavraAtual(palavraSorteada);
 
-    if (habilitado === false) {
-      setHabilitado(true);
+      if (habilitado === false) {
+        setHabilitado(true);
+      }
     }
   }
-  console.log(contErros);
 
   return (
     <div className="containerPrincipal">
@@ -66,10 +77,15 @@ export default function App() {
         funcao={escolherPalavra}
         palavra={palavraAtual}
         selecionadas={letrasSelecionadas}
+        acertos={acertos}
+        setAcertos={setAcertos}
+        fimDeJogo={fimDeJogo}
+        setFimDeJogo={setFimDeJogo}
       />
       <div className="teclado">
-        {alfabeto.map((a) => (
+        {alfabeto.map((a, index) => (
           <Letras
+            key={index}
             letra={a}
             palavra={palavraAtual}
             letraSelecionada={letrasSelecionadas}
@@ -78,6 +94,10 @@ export default function App() {
             setContErros={setContErros}
             setImagemAtual={setImagemAtual}
             imagensForca={imagensForca}
+            fimDeJogo={fimDeJogo}
+            setFimDeJogo={setFimDeJogo}
+            acertos={acertos}
+            setAcertos={setAcertos}
           />
         ))}
       </div>
@@ -90,6 +110,8 @@ export default function App() {
         setImagemAtual={setImagemAtual}
         contErros={contErros}
         setContErros={setContErros}
+        fimDeJogo={fimDeJogo}
+        setFimDeJogo={setFimDeJogo}
       />
     </div>
   );

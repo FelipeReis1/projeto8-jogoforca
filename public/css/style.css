@@ -27,6 +27,9 @@ body {
   border-radius: 8px;
   border-style: none;
 }
+.escolherPalavraOpaca {
+  opacity: 0.5;
+}
 .escolherPalavra:hover {
   cursor: pointer;
 }
@@ -143,8 +146,8 @@ body {
 }
 
 .red {
-  color: red;
+  color: red !important;
 }
 .green {
-  color: green;
+  color: green !important;
 }

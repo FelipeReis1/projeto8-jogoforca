@@ -7,16 +7,71 @@ export default function Jogo(props) {
   return (
     <>
       <img className="forca" src={props.imagem} alt=""></img>
-      <button onClick={props.funcao} className="escolherPalavra">
-        <p>Escolher Palavra</p>
-      </button>
-      <div className="placeHolderLetras">
-        <p>
-          {novaPalavra.map((p) => (
-            <LetraPalavra letra={p} selecionadas={props.selecionadas} />
-          ))}
-        </p>
-      </div>
+      {palavra === "" || props.fimDeJogo !== "" ? (
+        <button onClick={props.funcao} className="escolherPalavra">
+          <p>Escolher Palavra</p>
+        </button>
+      ) : (
+        <button
+          onClick={props.funcao}
+          className="escolherPalavra escolherPalavraOpaca"
+        >
+          <p>Escolher Palavra</p>
+        </button>
+      )}
+
+      {props.fimDeJogo === "ganhou" ? (
+        <div className="placeHolderLetras">
+          <p className="green">
+            {novaPalavra.map((p, index) => (
+              <LetraPalavra
+                key={index}
+                letra={p}
+                selecionadas={props.selecionadas}
+                acertos={props.acertos}
+                setAcertos={props.setAcertos}
+                palavra={props.palavra}
+                fimDeJogo={props.fimDeJogo}
+                setFimDeJogo={props.setFimDeJogo}
+              />
+            ))}
+          </p>
+        </div>
+      ) : props.fimDeJogo === "perdeu" ? (
+        <div className="placeHolderLetras">
+          <p className="red">
+            {novaPalavra.map((p, index) => (
+              <LetraPalavra
+                key={index}
+                letra={p}
+                selecionadas={props.selecionadas}
+                acertos={props.acertos}
+                setAcertos={props.setAcertos}
+                palavra={props.palavra}
+                fimDeJogo={props.fimDeJogo}
+                setFimDeJogo={props.setFimDeJogo}
+              />
+            ))}
+          </p>
+        </div>
+      ) : (
+        <div className="placeHolderLetras">
+          <p>
+            {novaPalavra.map((p, index) => (
+              <LetraPalavra
+                key={index}
+                letra={p}
+                selecionadas={props.selecionadas}
+                acertos={props.acertos}
+                setAcertos={props.setAcertos}
+                palavra={props.palavra}
+                fimDeJogo={props.fimDeJogo}
+                setFimDeJogo={props.setFimDeJogo}
+              />
+            ))}
+          </p>
+        </div>
+      )}
     </>
   );
 }
