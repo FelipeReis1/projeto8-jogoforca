@@ -13,7 +13,7 @@ export default function Jogo(props) {
       <div className="placeHolderLetras">
         <p>
           {novaPalavra.map((p) => (
-            <LetraPalavra letra={p} />
+            <LetraPalavra letra={p} selecionadas={props.selecionadas} />
           ))}
         </p>
       </div>

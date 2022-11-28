@@ -41,7 +41,7 @@ const alfabeto = [
 ];
 
 export default function App() {
-  const [imagemAtual, setImagemAtual] = React.useState(forca0);
+  const [imagemAtual, setImagemAtual] = React.useState(imagensForca[0]);
   const [contErros, setContErros] = React.useState(0);
   const [habilitado, setHabilitado] = React.useState(false);
   const [palavraAtual, setPalavraAtual] = React.useState("");
@@ -56,6 +56,7 @@ export default function App() {
       setHabilitado(true);
     }
   }
+  console.log(contErros);
 
   return (
     <div className="containerPrincipal">
@@ -63,13 +64,19 @@ export default function App() {
         imagem={imagemAtual}
         funcao={escolherPalavra}
         palavra={palavraAtual}
+        selecionadas={letrasSelecionadas}
       />
       <div className="teclado">
         {alfabeto.map((a) => (
           <Letras
             letra={a}
+            palavra={palavraAtual}
             letraSelecionada={letrasSelecionadas}
             setLetrasSelecionada={setLetrasSelecionadas}
+            contErros={contErros}
+            setContErros={setContErros}
+            setImagemAtual={setImagemAtual}
+            imagensForca={imagensForca}
           />
         ))}
       </div>
